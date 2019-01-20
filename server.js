@@ -4,6 +4,7 @@ const express = require('express');						// require - add in express library
 const hbs = require('hbs');								// require handlebars view template engine
 const fs = require('fs');									// add the file system module from node
 
+const port = process.env.PORT || 3000;		// get the port variable set by Heroko for web deployment, or use port 3000 if running locally
 
 var app = express();									// Our app
 hbs.registerPartials(__dirname + '/views/partials')									// enable partials
@@ -65,6 +66,6 @@ app.get('/bad', (req, res) => {
 }); // end app.get /bad
 
 
-app.listen(3000, () => {
-	console.log('Server is running on port 3000.');
+app.listen(port, () => {
+	console.log(`Server is running on port ${port}.`);
 });										// listen on localhost port 3000
