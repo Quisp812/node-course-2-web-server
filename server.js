@@ -51,6 +51,12 @@ app.get('/', (req, res) => {							// req = request data, res = response
 	});
 }); // end app.get ROOT
 
+// serve Projects
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs', {
+		pageTitle: 'Projects'
+	});
+})
 
 app.get('/about', (req, res) => {
 	res.render('about.hbs', {
